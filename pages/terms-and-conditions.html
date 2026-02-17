@@ -1,174 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Terms & Conditions | Lyftag Elite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-glass: rgba(30, 41, 59, 0.7);
-            --accent-gold: #fbbf24;
-            --text-primary: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+<meta charset="UTF-8" />
+<title>Terms & Conditions | Lyftag Elite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+<style>
+:root {
+  --bg-white: #ffffff;
+  --card-light: #f9f9f9;
+  --border-light: #e5e5e5;
+  --text-black: #000000;
+  --text-gray: #555555;
+  --primary-gradient: linear-gradient(90deg, #ff512f, #dd2476, #1fa2ff);
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--bg-white);
+  color: var(--text-black);
+}
 
-        .terms-container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+/* ================= HEADER (SAME AS OTHER PAGES) ================= */
 
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            background: linear-gradient(to right, #fff, var(--accent-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 1000;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin: 35px 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border-left: 4px solid var(--accent-gold);
-            padding-left: 15px;
-        }
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
 
-        p {
-            color: var(--text-dim);
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
 
-        strong {
-            color: white;
-            font-weight: 600;
-        }
+nav a {
+  color: var(--text-black);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
+}
 
-        ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+nav a:hover {
+  color: #dd2476;
+}
 
-        ul li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
-            color: var(--text-dim);
-        }
+.auth-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-        ul li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
+.login-btn {
+  background: transparent;
+  border: 2px solid #333;
+  color: #333;
+  margin-right: 12px;
+}
 
-        .contact-footer {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            margin-top: 40px;
-        }
+.signup-btn {
+  background: linear-gradient(90deg, #dd2476, #ff512f);
+  color: white;
+}
 
-        a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: 0.3s;
-        }
+.login-btn:hover { background: #f0f0f0; }
+.signup-btn:hover { opacity: 0.9; }
 
-        a:hover {
-            color: white;
-            text-decoration: underline;
-        }
+/* ================= CONTENT ================= */
 
-        .btn-home {
-            display: inline-block;
-            margin-top: 30px;
-            color: var(--text-dim);
-            font-size: 14px;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-        }
+.wrapper {
+  padding: 140px 5% 80px;
+  display: flex;
+  justify-content: center;
+}
 
-        .btn-home:hover {
-            border-color: var(--text-dim);
-        }
+.container {
+  max-width: 900px;
+  width: 100%;
+  padding: 50px;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: #fff;
+}
 
-        @media (max-width: 600px) {
-            .terms-container { padding: 30px 20px; }
-            h1 { font-size: 26px; }
-        }
-    </style>
+.container h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.container p {
+  font-size: 15px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+  color: var(--text-gray);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  nav ul { gap: 20px; font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 15px 20px; flex-wrap: wrap; }
+  nav ul { flex-wrap: wrap; justify-content: center; margin: 15px 0; }
+  .container { padding: 30px 20px; }
+}
+</style>
 </head>
+
 <body>
 
-<div class="terms-container">
+<header>
+  <a href="/" class="logo">LYF TAG</a>
+
+  <nav>
+     <ul>
+     <li><a href="/">Home</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+  </nav>
+
+  <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="container">
+
     <h1>Terms & Conditions</h1>
 
-    <p>By accessing or using the <strong>Lyftag</strong> website and our premium safety services, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
+    <p>
+These Terms and Conditions, along with privacy policy or other terms (“Terms”) constitute a binding 
+agreement by and between SANJAY KUMAR JUTTUGA, ( “Website Owner” or “we” or “us” or “our”) 
+and you (“you” or “your”) and relate to your use of our website, goods (as applicable) or services (as 
+applicable) (collectively, “Services”).
+    </p>
 
-    <h2>Services</h2>
-    <p>Lyftag provides digital identity, emergency response tagging, and online safety services as detailed on our platform. We aim for 100% uptime but provide services "as is" to maintain security standards.</p>
+    <p>
+By using our website and availing the Services, you agree that you have read and accepted these Terms 
+(including the Privacy Policy). We reserve the right to modify these Terms at any time and without 
+assigning any reason. It is your responsibility to periodically review these Terms to stay informed of 
+updates.
+    </p>
 
-    <h2>User Responsibilities</h2>
-    <ul>
-        <li>Users must provide accurate, truthful, and up-to-date information for emergency tags.</li>
-        <li>You are responsible for maintaining the confidentiality of your private document PIN.</li>
-        <li>Any misuse of our digital identity tools for illegal purposes is strictly prohibited.</li>
-    </ul>
+    <p>
+The use of this website or availing of our Services is subject to the following terms of use:
+    </p>
 
-    <h2>Payments & Billing</h2>
-    <ul>
-        <li>All secure transactions are processed via <strong>Cashfree</strong>.</li>
-        <li>Service prices are clearly displayed before the final checkout.</li>
-        <li>Lyftag is not liable for technical failures or payment delays caused by third-party banking systems.</li>
-    </ul>
+    <p>
+To access and use the Services, you agree to provide true, accurate and complete information to us 
+during and after registration, and you shall be responsible for all acts done through the use of your 
+registered account.
+    </p>
 
-    <h2>Changes to Agreement</h2>
-    <p>Lyftag reserves the right to refine or update these terms at any time to improve user security. Continued use of the platform after changes constitutes acceptance of the new terms.</p>
+    <p>
+Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, 
+performance, completeness or suitability of the information and materials offered on this website 
+or through the Services, for any specific purpose. You acknowledge that such information and 
+materials may contain inaccuracies or errors and we expressly exclude liability for any such 
+inaccuracies or errors to the fullest extent permitted by law.
+    </p>
 
-    <div class="contact-footer">
-        <h2>Legal Inquiries</h2>
-        <p>
-            <strong>Email:</strong> <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
-            <strong>Phone:</strong> +91 95810 26463
-        </p>
+    <p>
+Your use of our Services and the website is solely at your own risk and discretion. You are 
+required to independently assess and ensure that the Services meet your requirements.
+    </p>
+
+    <p>
+The contents of the Website and the Services are proprietary to Us and you will not have any 
+authority to claim any intellectual property rights, title, or interest in its contents.
+    </p>
+
+    <p>
+You acknowledge that unauthorized use of the Website or the Services may lead to action against 
+you as per these Terms or applicable laws.
+    </p>
+
+    <p>
+You agree to pay us the charges associated with availing the Services.
+    </p>
+
+    <p>
+You agree not to use the website and/ or Services for any purpose that is unlawful, illegal or 
+forbidden by these Terms, or Indian or local laws that might apply to you.
+    </p>
+
+    <p>
+You agree and acknowledge that website and the Services may contain links to other third party 
+websites. On accessing these links, you will be governed by the terms of use, privacy policy and 
+such other policies of such third party websites.
+    </p>
+
+    <p>
+You understand that upon initiating a transaction for availing the Services you are entering into a 
+legally binding and enforceable contract with the us for the Services.
+    </p>
+
+    <p>
+You shall be entitled to claim a refund of the payment made by you in case we are not able to 
+provide the Service. The timelines for such return and refund will be according to the specific 
+Service you have availed or within the time period provided in our policies (as applicable). In case 
+you do not raise a refund claim within the stipulated time, than this would make you ineligible for 
+a refund.
+    </p>
+
+    <p>
+Notwithstanding anything contained in these Terms, the parties shall not be liable for any failure to 
+perform an obligation under these Terms if performance is prevented or delayed by a force majeure 
+event.
+    </p>
+
+    <p>
+These Terms and any dispute or claim relating to it, or its enforceability, shall be governed by and 
+construed in accordance with the laws of India.
+    </p>
+
+    <p>
+All disputes arising out of or in connection with these Terms shall be subject to the exclusive 
+jurisdiction of the courts in Visakhapatnam, Andhra Pradesh.
+    </p>
+
+    <p>
+All concerns or communications relating to these Terms must be communicated to us using the 
+contact information provided on this website.
+    </p>
+</div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>LYF TAG</h2>
+            <p>Empowering India with smart digital identity and emergency response technology. Safety, simplified.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul class="footer-links">
+                <li><a href="/contact-us.html">Contact Us</a></li>
+                <li><a href="/shipping-policy.html">Shipping Policy</a></li>
+                <li><a href="/refund-policy.html">Refund & Cancellation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
     </div>
 
-    <center><a href="/" class="btn-home">← Back to Dashboard</a></center>
-</div>
-
+    <div class="footer-bottom">
+        <p>&copy; 2026 LYF TAG. All rights reserved.</p>
+        <span class="tagline">Scan • Connect • Save Lives</span>
+    </div>
+</footer>
 </body>
-</html>
-
