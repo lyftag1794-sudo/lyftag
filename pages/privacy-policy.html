@@ -1,168 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Privacy Policy | Lyftag Elite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-glass: rgba(30, 41, 59, 0.7);
-            --accent-gold: #fbbf24;
-            --text-primary: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+<meta charset="UTF-8" />
+<title>Privacy Policy | Lyftag Elite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+<style>
+:root {
+  --bg-white: #ffffff;
+  --card-light: #f9f9f9;
+  --border-light: #e5e5e5;
+  --text-black: #000000;
+  --text-gray: #555555;
+  --primary-gradient: linear-gradient(90deg, #ff512f, #dd2476, #1fa2ff);
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--bg-white);
+  color: var(--text-black);
+}
 
-        .policy-container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+/* ================= HEADER ================= */
 
-        h1 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            background: linear-gradient(to right, #fff, var(--accent-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-        }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 1000;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin: 35px 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-left: 4px solid var(--accent-gold);
-            padding-left: 15px;
-        }
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
 
-        p {
-            color: var(--text-dim);
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
 
-        strong {
-            color: white;
-            font-weight: 600;
-        }
+nav a {
+  color: var(--text-black);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
+}
 
-        ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+nav a:hover {
+  color: #dd2476;
+}
 
-        ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            color: var(--text-dim);
-        }
+.auth-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-        ul li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent-gold);
-            font-weight: bold;
-        }
+.login-btn {
+  background: transparent;
+  border: 2px solid #333;
+  color: #333;
+  margin-right: 12px;
+}
 
-        .contact-box {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid var(--border);
-            margin-top: 40px;
-        }
+.signup-btn {
+  background: linear-gradient(90deg, #dd2476, #ff512f);
+  color: white;
+}
 
-        a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
+.login-btn:hover { background: #f0f0f0; }
+.signup-btn:hover { opacity: 0.9; }
 
-        a:hover {
-            text-decoration: underline;
-            opacity: 0.8;
-        }
+/* ================= CONTENT ================= */
 
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14px;
-            color: var(--text-dim);
-        }
+.wrapper {
+  padding: 140px 5% 80px; /* prevents header overlap */
+  display: flex;
+  justify-content: center;
+}
 
-        @media (max-width: 600px) {
-            .policy-container { padding: 30px 20px; }
-            h1 { font-size: 28px; }
-        }
-    </style>
+.policy-container {
+  max-width: 800px;
+  width: 100%;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.policy-container h1 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.policy-container h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.policy-container p,
+.policy-container li {
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.policy-container ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-box {
+  background: var(--card-light);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  margin-top: 30px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  nav ul { gap: 20px; font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 15px 20px; flex-wrap: wrap; }
+  nav ul { flex-wrap: wrap; justify-content: center; margin: 15px 0; }
+  .policy-container { padding: 30px 20px; }
+}
+</style>
 </head>
+
 <body>
 
-<div class="policy-container">
+<!-- Header/Navbar -->
+<header>
+  <a href="/" class="logo">LYF TAG</a>
+
+  <nav>
+    <ul>
+     <li><a href="/">Home</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+  </nav>
+
+  <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</header>
+
+<!-- Privacy Content -->
+<div class="wrapper">
+  <div class="policy-container">
+
     <h1>Privacy Policy</h1>
 
-    <p>At <strong>Lyftag</strong>, we respect your privacy and are committed to protecting your personal information. This policy outlines how we handle your data within our elite safety ecosystem.</p>
+    <p>
+      At <strong>Lyftag</strong>, we respect your privacy and are committed to protecting your personal information.
+      This policy outlines how we handle your data within our elite safety ecosystem.
+    </p>
 
     <h2>Information We Collect</h2>
     <ul>
-        <li>Full legal name for identity verification</li>
-        <li>Active Email address for digital tag delivery</li>
-        <li>Emergency contact Phone number</li>
-        <li>Payment details (processed securely via Cashfree )</li>
-        <li>Medical or vehicle information required for our services</li>
+      <li>Full legal name for identity verification</li>
+      <li>Active email address for digital tag delivery</li>
+      <li>Emergency contact phone number</li>
+      <li>Payment details (processed securely via Cashfree)</li>
+      <li>Medical or vehicle information required for our services</li>
     </ul>
 
     <h2>How We Use Your Information</h2>
     <ul>
-        <li>To process premium activations and payments</li>
-        <li>To provide and improve our smart identity services</li>
-        <li>To communicate critical security updates and support</li>
+      <li>To process premium activations and payments</li>
+      <li>To provide and improve our smart identity services</li>
+      <li>To communicate critical security updates and support</li>
     </ul>
 
     <h2>Payment Security</h2>
-    <p>Security is our priority. All payments are securely processed through <strong>Cashfree </strong>. Lyftag does not store your card numbers, UPI PINs, or sensitive banking credentials on our servers.</p>
+    <p>
+      Security is our priority. All payments are securely processed through trusted payment gateways.
+      Lyftag does not store your card numbers, UPI PINs, or sensitive banking credentials on our servers.
+    </p>
 
     <div class="contact-box">
-        <h2>Contact Our Elite Support</h2>
-        <p>
-            <strong>Email:</strong> <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
-            <strong>Phone:</strong> +91 95810 26463
-        </p>
+      <h2>Contact Support</h2>
+      <p>
+        <strong>Email:</strong> lyftag1794@gmail.com <br>
+        <strong>Phone:</strong> +91 95810 26463
+      </p>
     </div>
 
-    <a href="../index.html" class="back-link">Return to Home</a>
+  </div>
 </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>LYF TAG</h2>
+            <p>Empowering India with smart digital identity and emergency response technology. Safety, simplified.</p>
+        </div>
 
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul class="footer-links">
+                <li><a href="/contact-us.html">Contact Us</a></li>
+                <li><a href="/shipping-policy.html">Shipping Policy</a></li>
+                <li><a href="/refund-policy.html">Refund & Cancellation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 LYF TAG. All rights reserved.</p>
+        <span class="tagline">Scan • Connect • Save Lives</span>
+    </div>
+</footer>
 </body>
-
 </html>
