@@ -729,7 +729,6 @@ section {
   box-shadow: var(--shadow);
   margin: calc(var(--spacing-unit) * 3) 0;
 }
-
 .referral-link {
   padding: calc(var(--spacing-unit) * 2);
   border: 1px solid var(--border-color);
