@@ -1,177 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Refund & Cancellation | Lyftag Elite</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-            --card-glass: rgba(30, 41, 59, 0.7);
-            --accent-gold: #fbbf24;
-            --text-primary: #f8fafc;
-            --text-dim: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+<meta charset="UTF-8" />
+<title>Cancellation & Refund Policy | Lyftag Elite</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" />
+<style>
+:root {
+  --bg-white: #ffffff;
+  --card-light: #f9f9f9;
+  --border-light: #e5e5e5;
+  --text-black: #000000;
+  --text-gray: #555555;
+  --primary-gradient: linear-gradient(90deg, #ff512f, #dd2476, #1fa2ff);
+}
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-primary);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
-        }
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: var(--bg-white);
+  color: var(--text-black);
+}
 
-        .policy-container {
-            max-width: 800px;
-            width: 100%;
-            background: var(--card-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 50px;
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
+/* ================= HEADER ================= */
 
-        h1 {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            background: linear-gradient(to right, #fff, var(--accent-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            line-height: 1.2;
-        }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  z-index: 1000;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--accent-gold);
-            margin: 35px 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            border-left: 4px solid var(--accent-gold);
-            padding-left: 15px;
-        }
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
 
-        p {
-            color: var(--text-dim);
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
 
-        ul {
-            list-style: none;
-            margin-bottom: 25px;
-        }
+nav a {
+  color: var(--text-black);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
+}
 
-        ul li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            color: var(--text-dim);
-        }
+nav a:hover {
+  color: #dd2476;
+}
 
-        ul li::before {
-            content: "•";
-            position: absolute;
-            left: 10px;
-            color: var(--accent-gold);
-            font-weight: bold;
-            font-size: 20px;
-            line-height: 1;
-        }
+.auth-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-        .support-card {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 30px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            margin-top: 40px;
-            text-align: center;
-        }
+.login-btn {
+  background: transparent;
+  border: 2px solid #333;
+  color: #333;
+  margin-right: 12px;
+}
 
-        a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+.signup-btn {
+  background: linear-gradient(90deg, #dd2476, #ff512f);
+  color: white;
+}
 
-        a:hover {
-            color: white;
-            text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
-        }
+.login-btn:hover { background: #f0f0f0; }
+.signup-btn:hover { opacity: 0.9; }
 
-        .footer-nav {
-            margin-top: 40px;
-            text-align: center;
-        }
+/* ================= CONTENT ================= */
 
-        .back-btn {
-            font-size: 14px;
-            color: var(--text-dim);
-            text-decoration: none;
-            padding: 8px 20px;
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            transition: 0.3s;
-        }
+.wrapper {
+  padding: 140px 5% 80px;
+  display: flex;
+  justify-content: center;
+}
 
-        .back-btn:hover {
-            background: rgba(255,255,255,0.05);
-            color: white;
-            border-color: var(--accent-gold);
-        }
+.container {
+  max-width: 900px;
+  width: 100%;
+  padding: 50px;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  background: #fff;
+}
 
-        @media (max-width: 600px) {
-            .policy-container { padding: 30px 20px; }
-            h1 { font-size: 24px; }
-        }
-    </style>
+.container h1 {
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 30px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.container p,
+.container li {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-gray);
+}
+
+.container ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.container li {
+  margin-bottom: 12px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  nav ul { gap: 20px; font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+  header { padding: 15px 20px; flex-wrap: wrap; }
+  nav ul { flex-wrap: wrap; justify-content: center; margin: 15px 0; }
+  .container { padding: 30px 20px; }
+}
+</style>
 </head>
+
 <body>
 
-<div class="policy-container">
-    <h1>Refund & Cancellation Policy</h1>
+<header>
+  <a href="/" class="logo">LYF TAG</a>
 
-    <p>We strive to provide an elite experience at <strong>Lyftag</strong>. However, we understand that issues may arise. Our policy is designed to be fair and transparent for all our premium members.</p>
-
-    <h2>Refund Policy</h2>
+  <nav>
     <ul>
-        <li>Refunds are applicable only in the event of <strong>genuine service failures</strong> or technical activation issues.</li>
-        <li>Refund requests must be formally raised within <strong>7 days</strong> of the original payment date.</li>
-        <li>Once approved, refunds are credited back to the original payment source within <strong>5–7 working days</strong>.</li>
+     <li><a href="/">Home</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+          <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+  </nav>
+
+  <div class="auth-buttons">
+    <button class="login-btn">Login</button>
+    <button class="signup-btn">Sign Up</button>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="container">
+
+    <h1>Cancellation & Refund Policy</h1>
+ <p>
+      SANJAY KUMAR JUTTUGA believes in helping its customers as far as possible, and has therefore a liberal cancellation policy. Under this policy:
+    </p>
+
+    <ul>
+      <li>
+        Cancellations will be considered only if the request is made immediately after placing the order. However, the cancellation request may not be entertained if the orders have been communicated to the vendors/merchants and they have initiated the process of shipping them.
+      </li>
+
+      <li>
+        SANJAY KUMAR JUTTUGA does not accept cancellation requests for perishable items like flowers, eatables etc. However, refund/replacement can be made if the customer establishes that the quality of product delivered is not good.
+      </li>
+
+      <li>
+        In case of receipt of damaged or defective items please report the same to our Customer Service team. The request will, however, be entertained once the merchant has checked and determined the same at his own end. This should be reported within <strong>same day of receipt</strong> of the products. In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within <strong>same day of receiving the product</strong>. The Customer Service Team after looking into your complaint will take an appropriate decision.
+      </li>
+
+      <li>
+        In case of complaints regarding products that come with a warranty from manufacturers, please refer the issue to them.
+      </li>
+
+      <li>
+        In case of any refunds approved by SANJAY KUMAR JUTTUGA, it will take <strong>6–8 working days</strong> for the refund to be processed to the end customer.
+      </li>
     </ul>
 
-    <h2>Cancellation Policy</h2>
-    <ul>
-        <li>Once a digital service or tag activation process has started, it cannot be cancelled or reversed.</li>
-        <li>All cancellation requests for pending orders must be submitted via our official email channel.</li>
-    </ul>
-
-    <div class="support-card">
-        <h2>Need Assistance?</h2>
-        <p>Our dedicated support team is here to help with your refund or cancellation inquiries.</p>
-        <p>
-            <strong>Email:</strong> <a href="mailto:lyftag1794@gmail.com">lyftag1794@gmail.com</a><br />
-            <strong>Phone:</strong> +91 95810 26463
-        </p>
-    </div>
-
-    <div class="footer-nav">
-        <a href="/" class="back-btn">← Back to Dashboard</a>
-    </div>
+  </div>
 </div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>LYF TAG</h2>
+            <p>Empowering India with smart digital identity and emergency response technology. Safety, simplified.</p>
+        </div>
 
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul class="footer-links">
+                <li><a href="/contact-us.html">Contact Us</a></li>
+                <li><a href="/shipping-policy.html">Shipping Policy</a></li>
+                <li><a href="/refund-policy.html">Refund & Cancellation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                <li><a href="/terms-and-conditions.html">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 LYF TAG. All rights reserved.</p>
+        <span class="tagline">Scan • Connect • Save Lives</span>
+    </div>
+</footer>
 </body>
 </html>
